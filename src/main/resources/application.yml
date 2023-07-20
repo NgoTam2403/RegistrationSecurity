@@ -4,9 +4,9 @@ server:
     include-binding-errors: always
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/registration
-    username:
-    password:
+    url: jdbc:postgresql://john.db.elephantsql.com:5432/oomujvuy
+    username: oomujvuy
+    password: GdZuFQVOMRQWR3CobP9AuPahpuALdmhT
   jpa:
     hibernate:
       ddl-auto: create-drop
