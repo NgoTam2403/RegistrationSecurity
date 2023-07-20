@@ -70,16 +70,10 @@
 					</excludes>
 				</configuration>
 			</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.3.0</version>
-					<configuration>
-						<skip>true</skip>
-					</configuration>
-				</plugin>
-		</plugins>
 
+
+		</plugins>
+		<finalName>docker-spring-boot</finalName>
 	</build>
 
 </project>
