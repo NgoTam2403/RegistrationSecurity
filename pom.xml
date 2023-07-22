@@ -74,5 +74,13 @@
 		</plugins>
 
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>123</id>
+			<name>123</name>
+			<url>file:./target</url>
+		</repository>
+
+	</distributionManagement>
 
 </project>
