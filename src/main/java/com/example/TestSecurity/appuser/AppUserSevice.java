@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import static com.example.TestSecurity.appuser.Login.*;
+
 @Service
 @AllArgsConstructor
 public class AppUserSevice implements UserDetailsService {
@@ -40,6 +42,25 @@ public class AppUserSevice implements UserDetailsService {
         //send email
 
         return token;
+    }
+    public Enum Login(String email,String password) {
+        AppUser user = appUserRepository.findUserByEmail(email);
+        if (user != null) {
+            String encodedPassword = bCryptPasswordEncoder.encode(password);
+            if (encodedPassword == user.getPassword()) {
+                if (user.isEnabled()){
+                    return SUCESSFULLY;
+                }else
+                    return EMAIL_NOT_VALIDATE;
+            } else {
+                return PASSWORD_ERROR;
+            }
+
+        } else {
+            return EMAIL_NOT_FOUND;
+        }
+
+
     }
 
     public int enableAppUser(String email) {
