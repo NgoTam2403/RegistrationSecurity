@@ -2,6 +2,7 @@ server:
   error:
     include-message: always
     include-binding-errors: always
+  port: ${PORT}
 spring:
   datasource:
     url: jdbc:postgresql://${PROD_DB_HOST}:${PROD_DB_PORT}/${PROD_DB_NAME}
