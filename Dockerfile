@@ -1,4 +1,8 @@
 FROM eclipse-temurin:20-jdk AS build
+COPY . /app
+WORKDIR /app
+RUN ./mvn bootJar
+RUN mv -f target/*.jar app.jar
 FROM eclipse-temurin:20-jre
 ARG PORT
 ENV PORT=${PORT}
